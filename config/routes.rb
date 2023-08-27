@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  #なぜか残っているルーティング get 'messages/index'
+  #なぜか残っていたルーティング get 'messages/index'
+  #検証
+  devise_for :users
   root to: "messages#index"
   resources :users, only: [:edit, :update]
   resources :rooms, only: [:new, :create]
-  #検証
-  devise_for :users
 end
